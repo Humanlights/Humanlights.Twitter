@@ -25,6 +25,9 @@ This application uses lots of dll assembly dependencies/references because of th
 - <code>+replyFormat</code>: (Optional) The twitter message format. "[changes_long]" by default.
 - <code>+reply</code>: (Optional) Enable posting commit reply. (Only posts attached to the first commit, if multiple lined) Be aware that if using +replyFormat, this needs to be added as well to work.
 
+## Example
+Our [Humanlights Bot](https://twitter.com/HumanlightsBot) uses it.
+
 ## License
 See [license][License] (hint: MIT).
 
