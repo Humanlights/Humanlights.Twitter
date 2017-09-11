@@ -25,6 +25,23 @@ This application uses lots of dll assembly dependencies/references because of th
 - <code>+replyFormat</code>: (Optional) The twitter message format. "[changes_long]" by default.
 - <code>+reply</code>: (Optional) Enable posting commit reply. (Only posts attached to the first commit, if multiple lined) Be aware that if using +replyFormat, this needs to be added as well to work.
 
+#### Replacements
+- **[RETURN]**: It replaces all '[RETURN]' in the tweet or reply format with '\n', basically returns.
+- **[TAB]**: Adds '\t', basically tabbing.
+- **[shortSHA]**: Replaces with commit's short SHA code.
+- **[longSHA]**: Commit's long SHA code.
+- **[changeset]**: Repository's commit count, basically.
+- **[author_name]**: Commit's author's name.
+- **[author_email]**: Commit's author's email.
+- **[date]**: Commit date and time.
+- **[repository_name]**: The repository name took from the origin.
+- **[branch]**: Commit's branch.
+- **[tag]**: Commit's tag (if any).
+- **[message]**: Commit's message.
+- **[changes_count]**: Commit's changes count. E.g "50 files", or "1 file".
+- **[changes_short]**: Commit's changes in short format. E.g "32 add., 5 mod., 1 del.", or "2 mod., 1 del.".
+- **[changes_long]**: Commit's changes in long format. E.g "4 files added, 1 file modified and 2 deleted".
+
 ## Example
 Our [Humanlights Bot](https://twitter.com/HumanlightsBot) uses it.
 
