@@ -42,6 +42,29 @@ This application uses lots of dll assembly dependencies/references because of th
 - **[changes_short]**: Commit's changes in short format. E.g "32 add., 5 mod., 1 del.", or "2 mod., 1 del.".
 - **[changes_long]**: Commit's changes in long format. E.g "4 files added, 1 file modified and 2 deleted".
 
+## Instructions
+### Step 1 - Git Hooks
+In order to make this actually work, to combine it all with the git repository, you'll just have to look at the Example folder and treat the files by just copying them to **.git/hooks/** folder in your repository. It is best to use post-commit (or post-push) because the post-commit script will use GitBatch to download the header commit of the repository (which is going to take the new commit -- after it has been commited and/or pushed).
+
+![](https://i.imgur.com/Tb8OpR4.gif)
+
+You can obviously customize the post-commit script with your default preferences for twitter post and/or reply tweet (if want to add some more info related to the commit in case it doesn't fit).
+
+The 'post-commit' in the Example folder is pretty much quick-start code, does not need any other path adjustments or something. Add it there and commit something. Don't forget to update the Credentials.json file!
+
+### Step 2 - Twitter Credentials
+I'll just make a little tutorial of taking the informations needed for the Credentials.json file (which you'll have to manually fulfill).
+#### 1. Create an application
+Go to [Twitter Application Management](https://apps.twitter.com/) and [create a new app](https://apps.twitter.com/app/new). Fill up basic stuff, follow the instructions on that page, etc.
+
+#### 2. Get credentials
+Open that Credentials.json file. Go to **Keys and Access Tokens** and copy-paste **Consumer Key (API Key)** and put it at -- you got it - do as well with **Consumer Secret (API Secret)**. Lower the page, click on **Create my access token** and get **Access Token** and place it at *userAccessToken* as well with the **Access Token Secret** to *userAccessSecret*.
+
+Note: Just a friendly note, be sure to remove unnecesarry spaces (if any).
+
+#### 3. Done!
+This is pretty much done. You've set up Git Hooks, created a Twitter application and got credentials needed and you're good to commit. Try it out and check out your Twitter profile. 
+
 ## Example
 Our [Humanlights Bot](https://twitter.com/HumanlightsBot) uses it.
 

@@ -1,0 +1,11 @@
+#!/bin/sh
+git=".git"
+gitCommit=".git/hooks/Applications/git_commit.json"
+gitBatch=".git/hooks/Applications/Humanlights.GitBatch/Humanlights.GitBatch.exe"
+twitter=".git/hooks/Applications/Humanlights.Twitter/Humanlights.Twitter.exe"
+credentials=".git/hooks/Applications/Credentials.json"
+
+$gitBatch -git $git -json $gitCommit
+$twitter -credentials $credentials -commit $gitCommit +tweetFormat "[message][RETURN][RETURN][author_name] on [repository_name]/[branch]#[changeset]"
+# $twitter -credentials $credentials -commit $gitCommit +tweetFormat "[message][RETURN][RETURN][author_name] on [repository_name]/[branch]#[changeset]" +replyFormat "Changes: [changes_long]" +reply
+rm $gitCommit
