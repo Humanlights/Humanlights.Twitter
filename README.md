@@ -24,6 +24,7 @@ This application uses lots of dll assembly dependencies/references because of th
 - <code>+tweetFormat</code>: (Optional) The twitter message format. "[message][RETURN][RETURN][author_name] on [branch]#[changeset]" by default. Which every single [] case is being replaced.
 - <code>+replyFormat</code>: (Optional) The twitter message format. "[changes_long]" by default.
 - <code>+reply</code>: (Optional) Enable posting commit reply. (Only posts attached to the first commit, if multiple lined) Be aware that if using +replyFormat, this needs to be added as well to work.
+- <code>+hiddenCommitPlaceholder</code>: (Optional) Pretty much self explanatory. "This commit has been marked as private, so it is hidden." by default.
 
 #### Replacements
 - **[RETURN]**: It replaces all '[RETURN]' in the tweet or reply format with '\n', basically returns.
@@ -41,6 +42,9 @@ This application uses lots of dll assembly dependencies/references because of th
 - **[changes_count]**: Commit's changes count. E.g "50 files", or "1 file".
 - **[changes_short]**: Commit's changes in short format. E.g "32 add., 5 mod., 1 del.", or "2 mod., 1 del.".
 - **[changes_long]**: Commit's changes in long format. E.g "4 files added, 1 file modified and 2 deleted".
+
+#### Includes
+- **[h]**: If any commit has "[h]" or "[H]" anywhere in the text message, the commit message will be replaced with hidden commit placeholder.
 
 ## Instructions
 ### Step 1 - Git Hooks
